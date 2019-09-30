@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: ninagruppe.dings.DingsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.663 s <<< FAILURE! - in ninagruppe.dings.DingsApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eintragsController' defined in file [C:\Users\wps\git\dings\dings\target\classes\ninagruppe\dings\EintragsController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [ninagruppe.dings.EintragsController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [ninagruppe.dings.EintragsController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
+

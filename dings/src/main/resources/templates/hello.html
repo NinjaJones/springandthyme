@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href=".../static/css/style.css"/>
+	<meta charset="UTF-8">
+	<title>Dies ist ein Titel!</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+</head>
+<body>
+	<h1>Hallo. Da unten sind Eintraege.</h1>
+	<p></p>
+	<span class="h1">Also manchmal zumindest.</span>
+	
+	<table class="tabelle">
+	  <thead>
+	    <tr>
+	      <th th:text="${eintrag}">Eintrag</th>
+	      <th th:text="${tage}">Tage</th>
+	      <th th:text="${minuten}">Minuten</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="eintrag : ${alleEintraege}">
+	      <td th:text="${eintrag.text}">Eintraege</td>
+	      <td th:text="${eintrag.tage}">Tage</td>
+	      <td th:text="${eintrag.minuten}">Minuten</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<br>
+	
+	<form th:action="@{/eintraege}" th:object="${eintrag}" method="POST">
+		<label for="text">Neuer Eintrag</label>
+		<input type="text" name="text" autofocus="autofocus" />
+		<br/>
+		<input type="submit" class="btn btn-primary" value="speichern"/>
+	</form>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+</body>
+</html>
